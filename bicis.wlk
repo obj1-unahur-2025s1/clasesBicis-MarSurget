@@ -23,6 +23,8 @@ class Bici{
         accesorios.remove(unAccesorio)
     }
 
+    method noTieneAccesorios() = accesorios.isEmpty()
+
     method cantAccesoriosLivianos() = accesorios.count({a=>a.peso() < 1})
 
 }
@@ -40,7 +42,7 @@ class Canasto {
     method esLuminoso() = false
     method initialize() {
       if(!volumen.between(1, 20)){
-        self.error(volumen.toString() + "no es un valor entre 1 y 20")
+        self.error(volumen.toString() + " no es un valor entre 1 y 20")
       }
     }
 }

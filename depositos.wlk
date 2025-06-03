@@ -22,12 +22,16 @@ class Deposito{
 
     method algunaPuedeLLevar(kilos) = bicis.any({b=>b.carga()>  kilos})
 
-    method marcaBiciMasRapida() = bicis.map(b=>b.marca().max({b=>b.velocidadCrucero()}))
+    method marcaBiciMasRapida() = bicis.map(bicis.max({b=>b.velocidadCrucero()}))
 
     method cargaTotalBicisLargas() {
         var bicisLargas = bicis.filter({b=>b.largo() > 170})
         return bicisLargas.sum({b=>b.carga()})   
     } 
+    
+    method cantBicisSinAccesorios() {
+        bicis.count({b=>b.noTieneAccesorios()})
+    }
 
 
 }
